@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonic Robo Blast 2</title>
+  <meta name="description" content="The Sonic Robo Blast 2 v2.1 Linux guide.">
+  <meta name="author" content="nzar">
+  <meta property="og:title" content="Sonic Robo Blast 2 v2.1 Linux guide">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nzarx.github.io/srb21.html">
+  <meta property="og:description" content="The Sonic Robo Blast 2 v2.1 Linux guide.">
+  <meta property="og:image" content="/srb2/Sonic Robo Blast 2 Logo.png">
+  <link rel="icon" href="/srb2/0wWjXu7.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+   <div class="container"><h1>Sonic Robo Blast 2 v2.1</h1>
+   <h3>Fork maintained by PASRC</h3>
+   <ol class="tutorial">
+   <h2>Building from source code</h2>
+   <h3>1. Download and install all of the necessary components:</h3>
+   <h4><pre><code>sudo apt install make libsdl2-dev libsdl2-mixer-dev nasm libpng-dev zlib1g libupnp-dev libgme-dev libgme0 libopenmpt-dev upx-ucl libcurl4-gnutls-dev build-essential</code></pre></h4>
+   <h3>2. Download the SRB2 source code and access the directory its source code is in:</h3>
+   <h4><pre><code>git clone https://github.com/PandaSRC/srb2-legacy && cd srb2-legacy</code></pre></h4>
+   <h3>3. Build SRB2:</h3>
+   If 32-bit:
+   <h4><pre><code>make -C src/ LINUX=1 LIBGME_LDFLAGS=-lgme LIBGME_CFLAGS=</code></pre></h4>
+   If 64-bit:
+   <h4><pre><code>make -C src/ LINUX64=1 LIBGME_LDFLAGS=-lgme LIBGME_CFLAGS=</code></pre></h4>
+   <h3>5. Access the directory the newly-compiled binary is in:</h3>
+   If 32-bit:
+   <h4><pre><code>cd bin/Linux/Release</code></pre></h4>
+   If 64-bit:
+   <h4><pre><code>cd bin/Linux64/Release</code></pre></h4>
+   <h3>6. Move the binary to the default location for executable files:</h3>
+   <h4><pre><code>sudo mv srb2legacy /usr/local/bin/srb2legacy</code></pre></h4>
+   <h3>7. Create a local SRB2 directory where most of the SRB2 data will be stored:</h3>
+   <h4><pre><code>cd && mkdir ".srb2_21" && cd ".srb2_21"</code></pre></h4>
+   <h3>8. Download SRB2 libraries:</h3>
+   <h4><pre><code>wget https://nzarx.github.io/srb2/srb2.1.tar.xz</code></pre></h4>
+   <h3>9. Extract them and delete the tar.xz file:</h3>
+   <h4><pre><code>tar xf "srb2.1.tar.xz" && rm "srb2.1.tar.xz"</code></pre></h4>
+   <h3>10. Exit the directory and move the SRB2 icon to a specific directory so that it can be seen in the shortcut file:</h3>
+   <h4><pre><code>cd && mv srb2-legacy/srb2.png $HOME/.icons/srb2_21.png</code></pre></h4>
+   <h3>11. The source code folder is no longer needed, the command below deletes it:</h3>
+   <h4><pre><code>rm -r srb2-legacy</code></pre></h4>
+   <h3>12. Download the shortcut file:</h3>
+   <h4><pre><code>wget https://nzarx.github.io/srb2/srb2_21.desktop</code></pre></h4>
+   <h3>13. Move said shortcut file to the local shortcut directory:</h3>
+   <h4><pre><code>mv srb2-2.1.desktop .local/share/applications/srb2_21.desktop</code></pre></h4>	
+   </ol></div>
+That is all you need to do! You can now launch and play Sonic Robo Blast 2.
+<br>
+<a href="srb2new.html">Go back</a>
+<br>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+

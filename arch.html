@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonic Robo Blast 2</title>
+  <meta name="description" content="The Sonic Robo Blast 2 Arch Linux guide.">
+  <meta name="author" content="nzar">
+  <meta property="og:title" content="Sonic Robo Blast 2 Arch Linux guide">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nzarx.github.io/arch.html">
+  <meta property="og:description" content="The Sonic Robo Blast 2 Arch Linux guide.">
+  <meta property="og:image" content="/srb2/Sonic Robo Blast 2 Logo.png">
+  <link rel="icon" href="/srb2/0wWjXu7.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+   <div class="container"><h1>Arch Linux</h1>
+   <h3>Maintained by JJK</h3>
+   <ol class="tutorial">
+   <h2>Option 1 <font color="#2ecc71">(The recommended one)</font></h2>
+   <h3>1. Install git:</h3>
+   <h4><pre><code>pacman -S git</code></pre></h4>
+   <h3>2. Download, compile and install SRB2 libraries:</h3>
+   <h4><pre><code>git clone https://aur.archlinux.org/srb2-data.git && cd srb2-data && makepkg -si</code></pre></h4>
+   <h3>3. Download, compile and install the SRB2 binary:</h3>
+   <h4><pre><code>git clone https://aur.archlinux.org/srb2.git && cd srb2 && makepkg -si</code></pre></h4>
+   <h3>4. Remove the directories you no longer need:</h3>
+   <h4><pre><code>rm -r srb2 srb2-data</code></pre></h4>
+   <h2>Option 2 <font color="#922b21">(Not recommended)</font></h2> 
+   <h3>1. Install yay (skip this step if you have an AUR helper of your own):</h3>
+   <h4><pre><code>sudo pacman -Syyu</code></pre></h4>
+   <h4><pre><code>sudo pacman -S git</code></pre></h4>
+   <h4><pre><code>git clone https://aur.archlinux.org/yay.git</code></pre></h4>
+   <h4><pre><code>cd yay</code></pre></h4>
+   <h4><pre><code>makepkg -si</code></pre></h4>
+   <h3>2. Install SRB2 from the user repository:</h3>
+   <h4><pre><code>yay -S srb2 srb2-data</code></pre></h4>	
+   </ol></div>
+That is all you need to do! You can now launch and play Sonic Robo Blast 2.
+<br>
+<a href="srb2new.html">Go back</a>
+<br>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+

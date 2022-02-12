@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonic Robo Blast 2</title>
+  <meta name="description" content="The Sonic Robo Blast 2 Linux guide.">
+  <meta name="author" content="nzar">
+  <meta property="og:title" content="Sonic Robo Blast 2 Linux guide">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nzarx.github.io/other.html">
+  <meta property="og:description" content="The Sonic Robo Blast 2 Linux guide.">
+  <meta property="og:image" content="/srb2/Sonic Robo Blast 2 Logo.png">
+  <link rel="icon" href="/srb2/0wWjXu7.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+   <div class="container"><h1>Other distros</h1>
+   <h2>SRB2 version featured in the article: 2.2.9</h2>
+   <h3>If the current version number varies from the one featured in the article, using these instructions can cause unexpected issues.</h3>
+   <h3>If your distro isn't listed on the main page, you could try compiling from source code. Be aware that this guide needs adjustments depending on your type of distribution.</h3>
+   <h3>Remember that there are distros that are built on top of other distros, meaning that their instructions should be roughly the same. Linux Mint is based on Ubuntu, and Ubuntu is based on Debian. EndeavourOS and Manjaro are based on Arch Linux and so on.</h3>
+   <ol class="tutorial">
+   <h2>Building from source code</h2>
+   <h3>1. Download and install all of the necessary components:</h3>
+   <h4><pre><code>sudo apt install git make libsdl2-dev libsdl2-mixer-dev nasm libpng-dev zlib1g libupnp-dev libgme-dev libgme0 libopenmpt-dev upx-ucl libcurl4-gnutls-dev build-essential</code></pre></h4>
+   <h3>2. Download the SRB2 source code and access the directory its source code is in:</h3>
+   <h4><pre><code>git clone https://github.com/STJr/SRB2/ && cd SRB2</code></pre></h4>
+   <h3>3. Build SRB2:</h3>
+   32-bit:
+   <h4><pre><code>make -C src/ LINUX=1 LIBGME_LDFLAGS=-lgme LIBGME_CFLAGS=</code></pre></h4>
+   64-bit:
+   <h4><pre><code>make -C src/ LINUX64=1 LIBGME_LDFLAGS=-lgme LIBGME_CFLAGS=</code></pre></h4>
+   <h3>4. Access the directory the newly-compiled binary is in:</h3>
+   <h4><pre><code>cd bin</code></pre></h4>
+   <h3>5. Rename the binary and move it to the default location for executable files:</h3>
+   <h4><pre><code>sudo mv lsdl2srb2 /usr/local/bin/srb2</code></pre></h4>
+   <h3>6. Create a local SRB2 directory where some SRB2 data will be stored:</h3>
+   <h4><pre><code>cd && mkdir .srb2 && cd .srb2</code></pre></h4>
+   <h3>7. Download SRB2 libraries:</h3>
+   <h4><pre><code>wget https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.9/SRB2-v229-Full.zip</code></pre></h4>
+   <h3>8. Extract them and delete the zip file:</h3>
+   <h4><pre><code>unzip "SRB2-v229-Full.zip" '*.pk3' '*.dta' '*.dat' 'models/**/*' && rm -r SRB2-v229-Full.zip</code></pre></h4>
+   <h3>9. Create a directory for SRB2 libraries:</h3>
+   <h4><pre><code>sudo mkdir -p /usr/local/share/games/SRB2</code></pre></h4>
+   <h3>10. Move all the libraries over to a global directory:</h3>
+   <h4><pre><code>find . -maxdepth 1 \( -name '*.pk3' -o -name '*.dta' \) -exec sudo mv "{}" /usr/local/share/games/SRB2 \;</code></pre></h4>
+   <h3>11. Move the SRB2 icon to a specific directory so that it can be seen in the shortcut file:</h3>
+   <h4><pre><code>cd && mkdir .icons ; mv SRB2/srb2.png $HOME/.icons/srb2.png</code></pre></h4>
+   <h3>12. The source code folder is no longer needed, the command below deletes it:</h3>
+   <h4><pre><code>rm -r SRB2</code></pre></h4>
+   <h3>13. Download the shortcut file:</h3>
+   <h4><pre><code>wget https://nzarx.github.io/srb2/srb2.desktop</code></pre></h4>
+   <h3>14. Move said shortcut file to the local shortcut directory:</h3>
+   <h4><pre><code>mv srb2.desktop .local/share/applications/srb2.desktop</code></pre></h4>	
+   </ol></div>
+That is all you need to do! You can now launch and play Sonic Robo Blast 2.
+<br>
+<a href="srb2new.html">Go back</a>
+<br>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+

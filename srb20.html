@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonic Robo Blast 2</title>
+  <meta name="description" content="The Sonic Robo Blast 2 v2.0 Linux guide.">
+  <meta name="author" content="nzar">
+  <meta property="og:title" content="Sonic Robo Blast 2 v2.0 Linux guide">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nzarx.github.io/srb20.html">
+  <meta property="og:description" content="The Sonic Robo Blast 2 v2.0 Linux guide.">
+  <meta property="og:image" content="/srb2/Sonic Robo Blast 2 Logo.png">
+  <link rel="icon" href="/srb2/0wWjXu7.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+   <div class="container"><h1>Sonic Robo Blast 2 v2.0</h1>
+   <h4>In case if you want to play the 2.0 version of Sonic Robo Blast 2, you can install it alongside the current version of SRB2 and even the 2.1 version as well.</h4>
+   <h4>This part of the article features a pre-compiled binary. While the source code for 2.0 is available, it needs a rewrite in order to be successfully compiled under modern software. If you want to contribute by rewriting the code or to compile said code on a virtual machine, <a href="https://nzarx.github.io/srb2/srb20.zip">here's the source code itself</a>.</h4>
+   <h4>Please note that this version is severely outdated and may run into issues running on modern hardware.</h4>
+   <ol class="tutorial">
+   <h3>1. Download and install all of the necessary components:</h3>
+   <h4><pre><code>sudo apt install libsdl1.2debian libsdl-mixer1.2 libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev nasm zlib1g libgme0 upx-ucl build-essential</code></pre></h4>
+   <h3>2. Download libpng12-0: <a href="https://askubuntu.com/a/1145412">https://askubuntu.com/a/1145412</a></h3>
+   <h3>3. Download the game files:</h3>
+   <h4><pre><code>wget https://nzarx.github.io/srb2/SRB2-2.0.tar.xz</code></pre></h4>
+   <h3>4. Extract the archive:</h3>
+   <h4><pre><code>tar -xvzf "SRB2-2.0.tar.xz"</code></pre></h4>
+   <h3>5. Remove said archive: </h3>
+   <h4><pre><code>rm SRB2v2.0.7.tar.gz</code></pre></h4>
+   <h3>6. Move the SRB2 icon to a specific directory so that it can be seen in the shortcut file:</h3>
+   <h4><pre><code>cd && wget https://nzarx.github.io/srb2/srb2-2.0.png && mv srb2-2.0.png $HOME/.icons/srb2-2.0.png</code></pre></h4>
+   <h3>7. Download the shortcut file:</h3>
+   <h4><pre><code>wget https://nzarx.github.io/srb2/srb2-2.0.desktop</code></pre></h4>
+   <h3>8. Move said shortcut file to the local shortcut directory:</h3>
+   <h4><pre><code>mv srb2-2.0.desktop .local/share/applications/srb2-2.0.desktop</code></pre></h4>	
+   </ol></div>
+That is all you need to do! You can now launch and play Sonic Robo Blast 2.
+<br>
+<a href="srb2new.html">Go back</a>
+<br>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+
