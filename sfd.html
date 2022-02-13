@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>nzar</title>
+        <meta name="description" content="Welcome to my very own shack!">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body id="sfd">
+     <div class="container"><h1>How to port your own pre-rendered cutscene over to Sonic Adventure 2</h1>
+        <b>Requirements:</b>
+        <ul>
+        <li><a href="https://store.steampowered.com/app/213610/Sonic_Adventure_2/">A Steam copy of Sonic Adventure 2</a></li>
+        <li><a href="https://gamebanana.com/tools/6333">SA2 Mod Loader</a></li>
+        <li><a href="https://www.mediafire.com/file/iseuyk48w87py57/SfdmuxApp.zip/file">SFDMux tool</a></li>
+        <li><a href="https://www.mediafire.com/file/vs1z5k2t6lumxmo/mcsetup.exe/file">SEGA Dreamcast Movie Creator</a></li>
+        <li>FFmpeg</li>
+        <li>Audacity</li>
+        <li>Wine, including PlayOnLinux (For Ubuntu guide only)</li>
+        </ul>
+        <b><font color="#B80F0A">Warning: This tutorial is primarily targeted to Ubuntu and Windows users only. The following steps may vary depending on what OS you use.
+        <br>
+        Sonic Adventure 2 does not accept any ratio other than 4:3. The resolution is also limited to 640x480.</font>
+        <br></b>
+        <div class="row">
+        <div class="column"><h2>Ubuntu guide</h2>
+        1. Download and install all of the necessary components, such as FFmpeg and Audacity:
+        <br>
+        <code>sudo apt-get update && sudo apt-get install ffmpeg audacity playonlinux wine</code>
+        <br>
+        2. Create a virtual drive in PlayOnLinux. Configure your Wine prefix so that it replicates Windows 98. Install Dreamcast Movie Maker. Don't forget about the shortcut!
+        <br>
+        3. Now open your video in Audacity. The project rate shouldn't be above 48000 Hz. Export it as a WAV file, choose "WAV (Microsoft) signed 16-bit PCM".
+        <br>
+        4. Open your WAV in Dreamcast Movie Maker, untick "Use identical files" and import your file as an audio file. Choose the "Sofdec Audio (.sfa)" type below. Press the "Start Encoding" button and you're done!
+        <br>
+        5. Open your terminal and access the directory your videofile is in. Type the following command:
+        <br>
+        <code>ffmpeg -i yourfilename.mp4 -q 1 output.m1v</code>
+        <br>
+        6. Unpack SFDMux and move your *.sfa file and *.m1v file to its directory. Open the terminal in its directory once again and type:
+        <br>
+        <code>wine Sfdmux.exe -V=yourvideofile.m1v -A=youraudiofile.sfa -S=output.sfd</code>
+        <br>
+        In case if you want to have separate audio tracks for English and Japanese dubs, use this command instead:
+        <br>
+        <code>wine Sfdmux.exe -V=yourvideofile.m1v -A=youraudiofileJPN.sfa -A=youraudiofileENG.sfa -S=output.sfd</code>
+        <br></div>
+        <div class="column"><h2>Windows guide</h2>
+        1. Install FFmpeg and Audacity. You can Google them easily.
+        <br>
+        2. Dreamcast Movie Maker installer requires backwards compatibility mode with Windows 98. After you're done with setting that, install the program. No further action related to backwards compatibility is required, the app itself works fine on Windows 10.
+        <br>
+        3. Now open your video in Audacity. The project rate shouldn't be above 48000 Hz. Export it as a WAV file, choose "WAV (Microsoft) signed 16-bit PCM".
+        <br>
+        4. Open your WAV in Dreamcast Movie Maker, untick "Use identical files" and import your file as an audio file. Choose the "Sofdec Audio (.sfa)" type below. Press the "Start Encoding" button and you're done!
+        <br>
+        5. Open your command line and access the directory your videofile is in. Type the following command:
+        <br>
+        <code>ffmpeg -i yourfilename.mp4 -q 1 output.m1v</code>
+        <br>
+        6. Unpack SFDMux and move your *.sfa file and *.m1v file to its directory. Open the command line in its directory once again and type:
+        <br>
+        <code>Sfdmux.exe -V=yourvideofile.m1v -A=youraudiofile.sfa -S=output.sfd</code>
+        <br>
+        In case if you want to have separate audio tracks for English and Japanese dubs, use this command instead:
+        <br>
+        <code>Sfdmux.exe -V=yourvideofile.m1v -A=youraudiofileJPN.sfa -A=youraudiofileENG.sfa -S=output.sfd</code>
+        <br></div></div>
+        7. Install SA2 Mod Manager to your Sonic Adventure 2 folder. Open the program and press the "Install loader" button below. Click on the "New mod" and create your own mod, make sure to tick the "Open folder" option. After that is done, create a new "gd_PC" folder, create another folder in it "event" and copypaste your own file inside of it. Rename it to any other *.sfd cutscene that is in the game's directory.
+        <br>
+        Volia! Your own cutscene in Sonic Adventure 2. You can change the order of how cutscenes load using SATools or replace the intro using the "No Battle" mod. Have fun!
+        <br>
+        <br>
+        <br>
+	<a href="index.html">Back to the main page</a>
+            </div>
+    </body>
+</html>
